@@ -32,6 +32,10 @@ gem 'spring',        group: :development
 #user registration
 gem 'devise'
 
+
+#profiles
+gem 'carrierwave'
+
 # Use unicorn as the app server
 # gem 'unicorn'
 
