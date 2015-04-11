@@ -2,3 +2,10 @@
   <%= f.input :content %>
   <%= f.button :submit %>
 <% end %>
+
+<ul class="list-group">
+	<% @testing.each do |question| %>
+		<li class="list-group-item">
+			<%= question.content %> 
+	<% end %> 
+</ul>
