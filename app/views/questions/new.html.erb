@@ -6,6 +6,6 @@
 <ul class="list-group">
 	<% @testing.each do |question| %>
 		<li class="list-group-item">
-			<%= question.content %> 
+			<%= question.content %> | <%= question.user.email %>
 	<% end %> 
 </ul>
