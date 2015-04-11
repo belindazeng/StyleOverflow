@@ -35,6 +35,12 @@ gem 'simple_form'
 #user registration
 gem 'devise'
 
+#allowing for comments
+gem 'acts_as_commentable'
+
+#allowing voting
+gem 'acts_as_votable', '~> 0.10.0'
+
 
 #profiles
 gem 'carrierwave'

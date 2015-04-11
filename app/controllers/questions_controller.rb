@@ -4,16 +4,23 @@ class QuestionsController < ApplicationController
 
 	def new
 		@question = Question.new
-		@testing = Question.all
+		@questions = Question.all
+
 	end
 
 	def create 
 		@question = Question.new(question_params)
-		@testing = Question.all
+		#@testing = Question.all
 		@question.user = current_user
+
 		if @question.save
-			flash[:success] = "You have created a tweet"
+			flash[:success] = "You have asked a question"
 			redirect_to new_question_path
+			comment = @question.comments.create
+			# maybe we can eventually use this as author?
+			#comment.title = "First comment."
+			comment.comment = "dummy value for now"
+			comment.save
 		else 
 			# redirect_to new_question_path
 			# YOU CAN'T SAY REDIRECT HERE BECAUSE WE NEED TO KEEP TRACK OF THE @TWEET EVEN IT'S LONG SO THAT THE USER 

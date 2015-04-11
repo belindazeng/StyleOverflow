@@ -4,8 +4,19 @@
 <% end %>
 
 <ul class="list-group">
-	<% @testing.each do |question| %>
+	<% @questions.each do |question| %>
 		<li class="list-group-item">
 			<%= question.content %> | <%= question.user.email %>
-	<% end %> 
+				| 
+			<% question.comments.each do |comment| %>
+				<%= comment.comment %>	
+			<% end %>
+			
+			<%= simple_form_for @question do |f| %>
+			  <%= f.input :content %>
+			  <%= f.button :submit %>
+			<% end %>
+
+		</li>
+	<% end %>	
 </ul>
